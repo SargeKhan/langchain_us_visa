@@ -24,10 +24,4 @@ def get_visa_type(ai_message: str) -> Tuple[bool, Union[str, None]]:
     if start_index == -1 or end_index == -1:
         return False, None
 
-    is_visa_type_selected = True if ai_message[start_index:end_index].strip(
-    ) == 'yes' else False
-
-    if not is_visa_type_selected:
-        return False, None
-
     return True, get_visa_type_value(ai_message)
